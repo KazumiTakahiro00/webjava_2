@@ -1,0 +1,14 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>結果</title>
+    </head>
+    <body>
+        <h3>結果</h3>
+            <form th:action="@{/start}">
+                <td th:text="${profession.name}+'は'+${profession.method}+で攻撃した！"></td><br>
+				<button>戻る</button>
+   	    	</form>
+    </body>
+</html>
