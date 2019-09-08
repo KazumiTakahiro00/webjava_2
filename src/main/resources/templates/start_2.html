@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>キャラ作成</title>
+    </head>
+    <body>
+        <h3>キャラ作成</h3>
+            <th>パーティ人数：</th>
+                <td width="50" th:text="${player.num}" ></td><br>
+            <th>キャラ作成済人数：</th>
+                <td width="50" th:text="${player.no}" ></td><br>
+            <form th:action="@{/command}" method="get" th:object="${player}">
+                <tr>
+                    <th>職業：</th>
+                    <input type="radio" name="profession" value="戦士" checked>戦士
+					<input type="radio" name="profession" value="魔法使い">魔法使い
+					<input type="radio" name="profession" value="武闘家">武闘家<br>
+                    <th>名前：</th>
+                    <input type="text" name="name"><br>
+                </tr>
+		<button>次へ</button>
+       	</form>
+
+    </body>
+</html>

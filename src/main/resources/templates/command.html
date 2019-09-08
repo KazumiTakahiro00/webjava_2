@@ -2,19 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
-        <title>コマンド</title>
+        <title>コマンド入力</title>
     </head>
     <body>
-        <h3>コマンド</h3>
+        <h3>コマンド入力</h3>
+            <tr>
+                <th>職業：</th>
+                <td width="50" th:text="${player.profession}" ></td><br>
+                <th>名前：</th>
+                <td width="50" th:text="${player.name}" ></td><br>
+            </tr>
+
             <form th:action="@{/end}">
-                <tr>
-                    <th>職業：</th>
-                    <td width="50" th:text="${player.profession}" ></td><br>
-                    <th>名前：</th>
-                    <td width="50" th:text="${player.name}" ></td><br>
-                </tr>
-		<button>たたかう</button>
-       	</form>
+            	<input type="hidden" name="method" th:value="fight">
+				<input type="submit" value="たたかう" />
+       		</form>
+            <form th:action="@{/end}">
+            	<input type="hidden" name="method" th:value="recover">
+				<input type="submit" value="かいふく" />
+       		</form>
 
     </body>
 </html>
